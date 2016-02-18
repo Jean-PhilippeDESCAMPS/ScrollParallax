@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Scroll Parallax View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ScrollParallaxViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nel-Zb-hua">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXD-lm-D3U">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    </mapView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="WXD-lm-D3U" secondAttribute="bottom" id="Ifo-fI-hgA"/>
+                                    <constraint firstItem="WXD-lm-D3U" firstAttribute="leading" secondItem="Nel-Zb-hua" secondAttribute="leading" id="Ipq-u8-7fy"/>
+                                    <constraint firstItem="WXD-lm-D3U" firstAttribute="top" secondItem="Nel-Zb-hua" secondAttribute="top" id="PLc-Fk-70W"/>
+                                    <constraint firstAttribute="height" constant="200" id="fdB-Zw-llx"/>
+                                    <constraint firstAttribute="trailing" secondItem="WXD-lm-D3U" secondAttribute="trailing" id="zd2-ea-ALf"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="fdB-Zw-llx"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlG-3I-CtE">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="iKf-mL-HQh"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mlG-3I-CtE" secondAttribute="trailing" id="2uo-L0-RMx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Nel-Zb-hua" secondAttribute="bottom" id="3g8-qI-tuz"/>
+                            <constraint firstAttribute="trailing" secondItem="Nel-Zb-hua" secondAttribute="trailing" id="FX8-VC-sap"/>
+                            <constraint firstItem="Nel-Zb-hua" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NNF-Rw-aBm"/>
+                            <constraint firstItem="mlG-3I-CtE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NsF-5h-T61"/>
+                            <constraint firstItem="Nel-Zb-hua" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OT1-8r-Bme"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mlG-3I-CtE" secondAttribute="bottom" id="XPq-bS-zLi"/>
+                            <constraint firstItem="mlG-3I-CtE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="b4r-BR-SYE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="WXD-lm-D3U" id="3re-lS-98B"/>
+                        <outlet property="parallaxScrollView" destination="mlG-3I-CtE" id="cNH-7T-nMR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-401" y="219"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hzB-YY-HIu">
+            <objects>
+                <viewController storyboardIdentifier="Controller" id="U0C-8Q-pzt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NBV-Mi-7xn"/>
+                        <viewControllerLayoutGuide type="bottom" id="fyD-gp-LbE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="47c-fG-7VT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uBh-CI-Fhc">
+                                <rect key="frame" x="0.0" y="22" width="600" height="578"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3c9-3c-itP">
+                                <rect key="frame" x="277" y="0.0" width="45" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.66274511810000003" blue="0.078431375319999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="Exh-DX-Zkl"/>
+                                    <constraint firstAttribute="height" constant="45" id="N8G-5o-Kxn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fyD-gp-LbE" firstAttribute="top" secondItem="uBh-CI-Fhc" secondAttribute="bottom" id="4ZJ-ce-mMq"/>
+                            <constraint firstItem="3c9-3c-itP" firstAttribute="top" secondItem="47c-fG-7VT" secondAttribute="topMargin" id="Psj-og-LwO"/>
+                            <constraint firstAttribute="trailing" secondItem="uBh-CI-Fhc" secondAttribute="trailing" id="TVS-NA-57P"/>
+                            <constraint firstItem="3c9-3c-itP" firstAttribute="centerX" secondItem="47c-fG-7VT" secondAttribute="centerX" id="Txb-vU-S1l"/>
+                            <constraint firstItem="uBh-CI-Fhc" firstAttribute="top" secondItem="47c-fG-7VT" secondAttribute="top" constant="22" id="clz-VN-2qJ"/>
+                            <constraint firstItem="uBh-CI-Fhc" firstAttribute="leading" secondItem="47c-fG-7VT" secondAttribute="leading" id="ixW-nH-3sx"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qq5-tU-PkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="279" y="219"/>
+        </scene>
+    </scenes>
+</document>
